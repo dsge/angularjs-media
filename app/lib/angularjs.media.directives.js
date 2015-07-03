@@ -135,40 +135,40 @@ angular.module('angularjs.media.directives', [])
       }
     };
   })
-  .directive('youtube', function factory(YoutubePlayerEmbed) {
+  .directive('youtube', ['YoutubePlayerEmbed', function factory(YoutubePlayerEmbed) {
     return YoutubePlayerEmbed();
-  })
-  .directive('flash', function factory(MediaFlashPlayerEmbed){
+  }])
+  .directive('flash', ['MediaFlashPlayerEmbed', function factory(MediaFlashPlayerEmbed){
     return MediaFlashPlayerEmbed();
-  })
-  .directive('justin', function factory(MediaJustinLiveStreamPlayer){
+  }])
+  .directive('justin', ['MediaJustinLiveStreamPlayer', function factory(MediaJustinLiveStreamPlayer){
     return MediaJustinLiveStreamPlayer({
       type: 'justin'
     });
-  })
-  .directive('twitch', function factory(MediaJustinLiveStreamPlayer){
+  }])
+  .directive('twitch', ['MediaJustinLiveStreamPlayer', function factory(MediaJustinLiveStreamPlayer){
     return MediaJustinLiveStreamPlayer({
       type: 'twitch'
     });
-  })
-  .directive('justinChat', function factory(MediaJustinLiveStreamChatroom) {
+  }])
+  .directive('justinChat', ['MediaJustinLiveStreamChatroom', function factory(MediaJustinLiveStreamChatroom) {
     return MediaJustinLiveStreamChatroom({
       type: 'justin'
     });
-  })
-  .directive('justinChatChannel', function factory(MediaJustinLiveStreamChatroom) {
+  }])
+  .directive('justinChatChannel', ['MediaJustinLiveStreamChatroom', function factory(MediaJustinLiveStreamChatroom) {
     return MediaJustinLiveStreamChatroom({
       type: 'justin'
     });
-  })
-  .directive('twitchChat', function factory(MediaJustinLiveStreamChatroom) {
+  }])
+  .directive('twitchChat', ['MediaJustinLiveStreamChatroom', function factory(MediaJustinLiveStreamChatroom) {
     return MediaJustinLiveStreamChatroom({
       type: 'twitch'
     });
-  })
-  .directive('twitchChatChannel', function factory(MediaJustinLiveStreamChatroom) {
+  }])
+  .directive('twitchChatChannel', ['MediaJustinLiveStreamChatroom', function factory(MediaJustinLiveStreamChatroom) {
     return MediaJustinLiveStreamChatroom({
       type: 'twitch'
     });
-  })
+  }])
 ;
